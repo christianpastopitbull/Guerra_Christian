@@ -32,3 +32,9 @@ Route::get('/formulario/editorial',[Editorial::class, 'listadoFor'])->name('regi
 
 //Rutal registro EDITORIALES
 Route::post('/formulario/registro',[Editorial::class, 'registroE'])->name('registro');
+
+//Rutal registro EDITORIALES
+Route::get('/formulario/actualizar/{id}',[Editorial::class, 'encontrar'])->name('enc');
+
+//Rutal registro EDITORIALES
+Route::post('/formulario/actualzar/resistroAct/{id}',[Editorial::class, 'actualizar'])->name('recAct');

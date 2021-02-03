@@ -21,9 +21,10 @@ class Editorial extends Controller
         return view('editoriales.formularioEdit',['var'=>$var]);
      }
 
+
      public function registroE(Request $request)
     {
-        // Registro de un producto en la base de datos a traves del Modelo
+        
         $category = new Editoriales();
         $category->nombre = $request->input('nombreE');
         $category->direccion = $request->input('direccionE');
@@ -32,4 +33,21 @@ class Editorial extends Controller
         $category->save();
         return redirect()->route('editoriales');
     }
+   
+    public function encontrar($id){
+        $bus= Editoriales::findOrfail($id);
+        $editor = Editoriales::all();
+        return view('editoriales.actualizarEdit', compact('bus','editor'));
+    }
+
+    public function actualizar(Request $request, $id){
+        $category = Editoriales::findOrfail($id);//buscar el id del producto para actualizar
+        $category->nombre = $request->input('nombreE');
+        $category->direccion = $request->input('direccionE');
+        $category->ciudad = $request->input('ciudadE');
+        $category->telefono = $request->input('telefonoE');
+        $category->save();
+        return redirect()->route('editoriales');
+ }
+   
 }
