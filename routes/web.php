@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Principal;
+use App\Http\Controllers\Libros;
+use App\Http\Controllers\Editorial;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Rutal Principal
+Route::get('/',[Principal::class, 'index']);
+
+//Rutal listar libros
+Route::get('/lista/libros',[Libros::class, 'index']);
+
+//Rutal listar EDITORIALES
+Route::get('/lista/editorial',[Editorial::class, 'listado'])->name('editoriales');
