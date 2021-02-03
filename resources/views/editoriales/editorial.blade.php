@@ -6,7 +6,7 @@
 <div class="alert alert-danger" role="alert">
  <h1 class="text-center"> LISTADO EDITORIALES </h1>
 </div><br><br>
-<a href="{{route('registroNueva')}}" class="btn btn-danger ">REGISTRAR NUEVA EDITORIAL</a>
+<a href="{{route('registroFor')}}" class="btn btn-danger ">REGISTRAR NUEVA EDITORIAL</a>
 <table class="table">
     <thead>
         <tr>
@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($edito as $l)
+    @foreach($editor as $l)
       
             <tr>
             <td> {{ $l->id }} </td>

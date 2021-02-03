@@ -25,3 +25,10 @@ Route::get('/lista/libros',[Libros::class, 'index']);
 
 //Rutal listar EDITORIALES
 Route::get('/lista/editorial',[Editorial::class, 'listado'])->name('editoriales');
+
+
+//Rutal registro EDITORIALES
+Route::get('/formulario/editorial',[Editorial::class, 'listadoFor'])->name('registroFor');
+
+//Rutal registro EDITORIALES
+Route::post('/formulario/registro',[Editorial::class, 'registroE'])->name('registro');
